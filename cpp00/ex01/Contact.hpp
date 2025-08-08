@@ -6,7 +6,7 @@
 /*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 16:47:03 by ayoub             #+#    #+#             */
-/*   Updated: 2025/08/08 15:19:26 by ayoub            ###   ########.fr       */
+/*   Updated: 2025/08/09 16:48:01 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ class PhoneBook
 		void search(void);
 		~PhoneBook(void);
 	private:
-		Contact Contacts[8];
-		int count;
-		int index;		
+		Contact _Contacts[8];
+		int _count;
+		int _index;		
 };
 
 #endif
