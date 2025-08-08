@@ -6,7 +6,7 @@
 /*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 16:28:55 by ayoub             #+#    #+#             */
-/*   Updated: 2025/08/08 16:19:41 by ayoub            ###   ########.fr       */
+/*   Updated: 2025/08/08 17:08:49 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ PhoneBook::PhoneBook(void)
 }
 PhoneBook::~PhoneBook(void)
 {
-	std::cout << "phone book is destroyed hahahahah";
+	std::cout << "phone book is destroyed ";
 	return ;
 }
 
@@ -83,11 +83,10 @@ void PhoneBook::add(void)
     Contact newContactObj;
 	
 	std::string input;
-	if (count >= 8)
-	{
-		std::cout << "PhoneBook is full, cannot add more contacts.\n";
-		return ;
-	}
+	
+	
+	std::cout << "---------- ADD A NEW CONTACT ----------" << std::endl;
+	
 	std::string name, lastname, nickname, phonenumber, darkestsecret;
 	std::cout << "Enter name: ";
 	std::getline(std::cin, input);
@@ -113,12 +112,18 @@ void PhoneBook::add(void)
 	if (newContactObj.get_name().empty() || 
 		newContactObj.get_lastname().empty() || 
 		newContactObj.get_nickname().empty() || 
-		newContactObj.get_phonenumber().empty() || 
+		newContactObj.get_phonenumber().empty() ||
 		newContactObj.get_darkestsecret().empty())
 	{
 		std::cout << "All fields must be filled. Contact not added.\n";
 		return ;
 	}
+	// else if (newContactObj.get_phonenumber().length() != 10)
+	// {
+	// 	std::cout << "Phone number must be 10 digits long. Contact not added.\n";
+	// 	return ;
+	// }
+	std::cout << "Adding contact...\n";
 	this->Contacts[this->index] = newContactObj;
 
 	if (this->index < 7)
@@ -131,9 +136,10 @@ void PhoneBook::add(void)
 	std::cout << "contact added Successfully \n" ; 
 }
 
-std::string trancated_name , trancated_last_name , trancated_nickname;
 void PhoneBook::search()
 {
+	std::string trancated_name , trancated_last_name , trancated_nickname , input;
+	int index;
 	std::cout << "---------- PHONIEST OF BOOKS ----------" << std::endl;
 	std::cout << "Index | First Name | Last Name | Nickname" << std::endl;
 
@@ -144,25 +150,39 @@ void PhoneBook::search()
 		trancated_nickname = this->Contacts[i].get_nickname();		
 		
 		if (trancated_name.length() > 10)
-		{
-			trancated_name = 
-		}
+			trancated_name = trancated_name.substr(0, 9) + ".";
 		if (trancated_last_name.length() > 10)
-		{
-			trancated_last_name = 
-		}
+			trancated_last_name = trancated_last_name.substr(0, 9) + ".";
 		if (trancated_nickname.length() > 10)
-		{
-			trancated_nickname =
-		}
-		std::cout << std::setw(10) << i + 1 << " | "
-		          << std::setw(10) << trancated_name << " | "
-		          << std::setw(10) << trancated_last_name << " | "
-		          << std::setw(10) << trancated_nickname << " | "
+			trancated_nickname = trancated_nickname.substr(0, 9) + ".";
+		std::cout << std::setw(10) << i + 1 << "|"
+		          << std::setw(10) << trancated_name << "|"
+		          << std::setw(10) << trancated_last_name << "|"
+		          << std::setw(10) << trancated_nickname << "|"
 				  << std::setw(10) << this->Contacts[i].get_phonenumber() << std::endl;
 	}
 	std::cout << "----------------------------------------" << std::endl;
-	
+
+	std::cout << "enter the index of the contact u want to search for ";
+	std::getline(std::cin , input);
+	index = atoi(input.c_str());
+	if (index < 1 || index > this->count)
+	{
+		std::cout << "Invalid index. Please try again.\n";
+		return ;
+	}
+	for (int i = 0; i < this->count; i++)
+	{
+		if(index == i)
+		{
+			std::cout << "Index | First Name | Last Name | Nickname" << std::endl;
+			std::cout << std::setw(10) << i + 1 << "|"
+			          << std::setw(10) << this->Contacts[i].get_name() << "|"
+			          << std::setw(10) << this->Contacts[i].get_lastname() << "|"
+			          << std::setw(10) << this->Contacts[i].get_nickname() << "|"
+			          << std::setw(10) << this->Contacts[i].get_phonenumber() << std::endl;
+		}
+	}
 }
 
 int main ()
