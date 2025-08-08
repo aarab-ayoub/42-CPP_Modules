@@ -6,7 +6,7 @@
 /*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 16:28:55 by ayoub             #+#    #+#             */
-/*   Updated: 2025/08/08 16:16:42 by ayoub            ###   ########.fr       */
+/*   Updated: 2025/08/08 16:19:41 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,6 +143,18 @@ void PhoneBook::search()
 		trancated_last_name = this->Contacts[i].get_lastname();		
 		trancated_nickname = this->Contacts[i].get_nickname();		
 		
+		if (trancated_name.length() > 10)
+		{
+			trancated_name = 
+		}
+		if (trancated_last_name.length() > 10)
+		{
+			trancated_last_name = 
+		}
+		if (trancated_nickname.length() > 10)
+		{
+			trancated_nickname =
+		}
 		std::cout << std::setw(10) << i + 1 << " | "
 		          << std::setw(10) << trancated_name << " | "
 		          << std::setw(10) << trancated_last_name << " | "

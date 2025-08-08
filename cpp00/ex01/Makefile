@@ -1,13 +1,17 @@
-SRC = megaphone.cpp
+
 CPP = c++
-OBJ = $(SRC:.cpp=.o)
+
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = megaphone
+SRC = PhoneBook.cpp
 
-all: $(NAME)
+OBJ=$(SRC:.cpp=.o)
 
-$(NAME) : $(OBJ)
+NAME = PhoneBook
+
+all:$(NAME)
+
+$(NAME):$(OBJ)
 	$(CPP) $(FLAGS) $(OBJ) -o $(NAME)
 
 %.o:%.cpp
@@ -16,9 +20,7 @@ $(NAME) : $(OBJ)
 clean:
 	rm $(OBJ)
 
-fclean: clean
-	rm $(NAME)
+fclean:
+	rm $(OBJ) $(NAME)
 
-re : fclean all
-
-.PHONY : all clean fclean
+.PHONY: all clean fclean
