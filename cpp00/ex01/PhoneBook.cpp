@@ -6,7 +6,7 @@
 /*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 16:28:55 by ayoub             #+#    #+#             */
-/*   Updated: 2025/08/09 21:42:56 by ayoub            ###   ########.fr       */
+/*   Updated: 2025/08/12 15:18:14 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ void PhoneBook::add(void)
 	// 	return ;
 	// }
 	std::cout << "Adding contact...\n";
-	this->Contacts[this->index] = newContactObj;
+	this->_Contacts[this->_index] = newContactObj;
 	// else if (newContactObj.get_phonenumber().length() != 10)
 	// {
 	// 	std::cout << "Phone number must be 10 digits long. Contact not added.\n";
@@ -176,7 +176,7 @@ void PhoneBook::search()
 		          << std::setw(10) << trancated_name << "|"
 		          << std::setw(10) << trancated_last_name << "|"
 		          << std::setw(10) << trancated_nickname << "|"
-				  << std::setw(10) << this->Contacts[i].get_phonenumber() << std::endl;
+				  << std::setw(10) << this->_Contacts[i].get_phonenumber() << std::endl;
 			trancated_nickname = trancated_nickname.substr(0, 9) + ".";
 		std::cout << std::setw(10) << i + 1 << "|"
 		          << std::setw(10) << trancated_name << "|"
@@ -189,21 +189,21 @@ void PhoneBook::search()
 	std::cout << "enter the index of the contact u want to search for ";
 	std::getline(std::cin , input);
 	index = atoi(input.c_str());
-	if (index < 1 || index > this->count)
+	if (index < 1 || index > this->_count)
 	{
 		std::cout << "Invalid index. Please try again.\n";
 		return ;
 	}
-	for (int i = 0; i < this->count; i++)
+	for (int i = 0; i < this->_count; i++)
 	{
 		if(index == i)
 		{
 			std::cout << "Index | First Name | Last Name | Nickname" << std::endl;
 			std::cout << std::setw(10) << i + 1 << "|"
-			          << std::setw(10) << this->Contacts[i].get_name() << "|"
-			          << std::setw(10) << this->Contacts[i].get_lastname() << "|"
-			          << std::setw(10) << this->Contacts[i].get_nickname() << "|"
-			          << std::setw(10) << this->Contacts[i].get_phonenumber() << std::endl;
+			          << std::setw(10) << this->_Contacts[i].get_name() << "|"
+			          << std::setw(10) << this->_Contacts[i].get_lastname() << "|"
+			          << std::setw(10) << this->_Contacts[i].get_nickname() << "|"
+			          << std::setw(10) << this->_Contacts[i].get_phonenumber() << std::endl;
 		}
 	}
 
