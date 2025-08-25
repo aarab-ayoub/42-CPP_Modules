@@ -6,7 +6,7 @@
 /*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 16:28:55 by ayoub             #+#    #+#             */
-/*   Updated: 2025/08/12 15:18:14 by ayoub            ###   ########.fr       */
+/*   Updated: 2025/08/13 14:37:02 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,12 +83,7 @@ void PhoneBook::add(void)
 {
     Contact newContactObj;
 	
-	std::string input;
-	
-	
-	std::cout << "---------- ADD A NEW CONTACT ----------" << std::endl;
-	
-	
+	std::string input;	
 	
 	std::cout << "---------- ADD A NEW CONTACT ----------" << std::endl;
 	
