@@ -21,7 +21,7 @@ using namespace std;
 // 	MyClass obj2;
 
 // 	obj2.num = 2;
-// 	obj2.name = "ayoub";
+// 	obj2.name = "ayaarab";
 
 // 	obj.num = 1;
 // 	obj.name = "aarab";
