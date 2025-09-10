@@ -146,10 +146,8 @@ void PhoneBook::add(void)
 
 void PhoneBook::search()
 {
-	std::string trancated_name , trancated_last_name , trancated_nickname , input;
 	int index;
 	std::string trancated_name , trancated_last_name , trancated_nickname , input;
-	int index;
 	std::cout << "---------- PHONIEST OF BOOKS ----------" << std::endl;
 	std::cout << "Index | First Name | Last Name | Nickname" << std::endl;
 
