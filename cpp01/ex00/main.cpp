@@ -6,7 +6,7 @@
 /*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 14:48:17 by ayoub             #+#    #+#             */
-/*   Updated: 2025/09/06 18:10:33 by ayoub            ###   ########.fr       */
+/*   Updated: 2025/09/12 12:25:01 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int main()
 {
-	Zombie *zombie1 = newZombie("Zombie1");
+	Zombie *z1 = newZombie("zombie1");
+	z1->announce();
+	z1->~Zombie();
 	return 0;
 }
