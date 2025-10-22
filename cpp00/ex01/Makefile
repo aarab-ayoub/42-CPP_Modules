@@ -11,10 +11,10 @@ NAME = PhoneBook
 
 all:$(NAME)
 
-$(NAME):$(OBJ) Contact.hpp
+$(NAME):$(OBJ)
 	$(CPP) $(FLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp Contact.hpp
 	$(CPP) $(FLAGS) -c $< -o $@
 
 clean:

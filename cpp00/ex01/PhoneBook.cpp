@@ -86,24 +86,30 @@ void PhoneBook::add(void)
 	std::cout << "---------- ADD A NEW CONTACT ----------" << std::endl;
 	
 	std::string name, lastname, nickname, phonenumber, darkestsecret;
+
 	std::cout << "Enter name: ";
-	std::getline(std::cin, input);
+	if (!std::getline(std::cin, input))
+		return ;
 	newContactObj.set_name(input);
 	
 	std::cout << "Enter lastname: ";
-	std::getline(std::cin, input);
+	if (!std::getline(std::cin, input))
+		return ;
 	newContactObj.set_lastname(input);
 	
 	std::cout << "Enter nickname: ";
-	std::getline(std::cin, input);
+	if (!std::getline(std::cin, input))
+		return ;
 	newContactObj.set_nickname(input);
 	
 	std::cout << "Enter phone_number: ";
-	std::getline(std::cin, input);
+	if (!std::getline(std::cin, input))
+		return ;
 	newContactObj.set_phonenumber(input);
 	
 	std::cout << "Enter darkest secret: ";
-	std::getline(std::cin, input);
+	if (!std::getline(std::cin, input))
+		return ;
 	newContactObj.set_darkestsecret(input);
 	
 
