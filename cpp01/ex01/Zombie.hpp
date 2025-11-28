@@ -3,4 +3,22 @@
 
 #include <iostream>
 
+class Zombie
+{
+private:
+	std::string name;
+public:
+	Zombie();
+	Zombie(std::string name);
+	~Zombie();
+	void AssignName(std::string name);
+	void announce(void);
+};
+
+// Zombie::Zombie(std::string name)
+// {
+// 	this->name = name;
+// }
+Zombie* zombieHorde( int N, std::string name );
+
 #endif
