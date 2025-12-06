@@ -1,17 +1,12 @@
 #include "Zombie.hpp"
 
-Zombie *zombieHorde(int n)
+Zombie* zombieHorde(int N, std::string name)
 {
-	if(n <= 0)
-		return NULL;
-	Zombie *horde = new Zombie[n];
-	for (int i = 0; i < n; i++)
-	{
-		horde[i].announce();
-	}
-	return horde;
-}
-void Zombie::AssignName(std::string name)
-{
-	this->name = name;
+    Zombie* zombies = new Zombie[N];
+    
+    for (int i = 0; i < N; i++)
+    {
+        zombies[i].AssignName(name);
+    }
+    return zombies;
 }

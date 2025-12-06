@@ -11,10 +11,17 @@ int main(int argc , char **argv)
 	std::string s1 = argv[2];
 	std::string s2 = argv[3];
 
+	if (s1.empty())
+	{
+		std::cout << "String to replace is empty" << std::endl;
+		return 1;
+	}
+
 	std::ifstream filename(argv[1]);
 	if(!filename.is_open())
 	{
 		std::cout << "it not a file or cannot open it " << std::endl;
+		return 1;
 	}
 	std::string o_file = argv[1];
 	o_file.append(".replace");
@@ -23,6 +30,7 @@ int main(int argc , char **argv)
 	if(!out_file.is_open())
 	{
 		std::cout << "it not a file or cannot open it " << std::endl;
+		return 1;
 	}
 	std::string line;
 	std::string content;

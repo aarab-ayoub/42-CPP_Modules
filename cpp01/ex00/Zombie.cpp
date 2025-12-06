@@ -2,7 +2,6 @@
 
 Zombie::Zombie(std::string name)
 {
-	// printf("chiii qlawa\n");
 	this->name = name;
 }
 Zombie::~Zombie()
