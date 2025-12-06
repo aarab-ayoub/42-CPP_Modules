@@ -91,47 +91,66 @@ using namespace std;
 
 
 ///////////////////////////////////
-#include <iostream>
-#include <string>
+// #include <iostream>
+// #include <string>
 
-class Contact {
-private:
-    std::string name;
+// class Contact {
+// private:
+//     std::string name;
 
-public:
-    Contact(std::string n) : name(n) {}
+// public:
+//     Contact(std::string n) : name(n) {}
 
-    std::string getNameValue() const {
-        return name;   // returns a copy
-    }
+//     std::string getNameValue() const {
+//         return name;   // returns a copy
+//     }
 
-    const std::string getNameConstValue() {
-        return name;   // returns a const copy
-    }
+//     const std::string getNameConstValue() {
+//         return name;   // returns a const copy
+//     }
 
-    const std::string& getNameRef() const {
-        return name;   // no copy
-    }
-};
+//     const std::string& getNameRef() const {
+//         return name;   // no copy
+//     }
+// };
 
-int main() {
-    Contact c("Alice");
+// int main() {
+//     Contact c("Alice");
 
-    std::cout << "\n=== 1. Return by VALUE ===\n";
-    std::string a = c.getNameValue();  
-    a = "Bob";                         // OK (modifies the copy)
-    std::cout << "a = " << a << "\n";
+//     std::cout << "\n=== 1. Return by VALUE ===\n";
+//     std::string a = c.getNameValue();  
+//     a = "Bob";                         // OK (modifies the copy)
+//     std::cout << "a = " << a << "\n";
     
-    std::cout << "\n=== 2. Return by CONST VALUE ===\n";
-    const std::string b = c.getNameConstValue();
-    // b = "Bob";  // ❌ ERROR: cannot modify const value
-    std::cout << "b = " << b << "\n";
+//     std::cout << "\n=== 2. Return by CONST VALUE ===\n";
+//     const std::string b = c.getNameConstValue();
+//     // b = "Bob";  // ❌ ERROR: cannot modify const value
+//     std::cout << "b = " << b << "\n";
 
-    std::cout << "\n=== 3. Return by CONST REFERENCE ===\n";
-    const std::string& ref = c.getNameRef();
-    std::cout << "ref = " << ref << "\n";
+//     std::cout << "\n=== 3. Return by CONST REFERENCE ===\n";
+//     const std::string& ref = c.getNameRef();
+//     std::cout << "ref = " << ref << "\n";
 
-    // ref = "Bob";  // ❌ ERROR: you cannot modify a const reference
+//     // ref = "Bob";  // ❌ ERROR: you cannot modify a const reference
 
-    return 0;
+//     return 0;
+// }
+
+
+
+///////////////////////////////////
+
+int main()
+{
+    std::string s = "hello world mi amo ayoub";
+    std::string a = "msi";
+
+    std::size_t found = s.find(a);
+    if (found == std::string::npos)
+    {
+        std::cout << "could not found it " ;
+    }
+    else
+        std::cout << "found it on position" << found ;  
+    
 }
