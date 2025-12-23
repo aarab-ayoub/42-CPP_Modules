@@ -140,17 +140,63 @@ using namespace std;
 
 ///////////////////////////////////
 
+// int main()
+// {
+//     std::string s = "hello world mi amo ayoub";
+//     std::string a = "msi";
+
+//     std::size_t found = s.find(a);
+//     int8_t ab3 = 5;
+//     int16_t ab = 5;
+//     int32_t ab1 = 5;
+//     int64_t ab2 = 5;
+//     std::cout << sizeof(ab3) << std::endl;
+//     std::cout << sizeof(ab) << std::endl;
+//     std::cout << sizeof(ab1) << std::endl;
+//     std::cout << sizeof(ab2) << std::endl;
+
+//     if (found == std::string::npos)
+//     {
+//         std::cout << "could not found it " ;
+//     }
+//     else
+//         std::cout << "found it on position" << found ;  
+    
+// }
+
+
+/////////////////
+#include "hpp.hpp"
+
 int main()
 {
-    std::string s = "hello world mi amo ayoub";
-    std::string a = "msi";
+    hpp a;
+    hpp ab;
 
-    std::size_t found = s.find(a);
-    if (found == std::string::npos)
-    {
-        std::cout << "could not found it " ;
-    }
+    a.setnum(10);
+
+    // ab = a;
+    float a = 0.1f + 0.2f;
+    float b = 0.3f;
+    int c = 0;
+    int d = 0;
+    if (a == b)
+        std::cout << "equal\n";
     else
-        std::cout << "found it on position" << found ;  
-    
+        std::cout << "not equal\n";
+    // std::cout << a.getnum() << std::endl;
+    // std::cout << ab.getnum() << std::endl;
+    // a.setnum(10);
+    // a.setname("nameaaaaa");
+    // int b = a.getnum();
+    // std::string s = a.getname();
+ 
+    // int c = ab.getnum();
+    // std::string str = ab.getname();
+    // std::cout << b << std::endl;
+    // std::cout << s << std::endl;
+
+    // std::cout << c << std::endl;
+    // std::cout << str << std::endl;
+
 }
