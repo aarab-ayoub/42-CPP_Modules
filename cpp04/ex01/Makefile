@@ -3,7 +3,7 @@ CPP = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -14,7 +14,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CPP) $(FLAGS) -o $(NAME) $(OBJS)
 
-%.o: %.cpp Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
+%.o: %.cpp Animal.hpp Dog.hpp Cat.hpp Brain.hpp
 	$(CPP) $(FLAGS) -c $< -o $@
 
 clean:
