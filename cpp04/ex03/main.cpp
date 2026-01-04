@@ -1,25 +1,30 @@
-
-#include "Character.hpp"
+#include "MateriaSource.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
-
+#include "Character.hpp"
 
 int	main(void)
 {
-	Character	bob("Bob");
-	ICharacter* jim = new Character("Jim");
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 
-	std::cout << "Character 1: " << bob.getName() << std::endl;
-	std::cout << "Character 2: " << jim->getName() << std::endl;
+	ICharacter* me = new Character("me");
 
-	bob.equip(new Ice());
-	bob.equip(new Cure());
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
 
-	bob.use(0, *jim);
-	bob.use(1, *jim);
+	ICharacter* bob = new Character("bob");
 
-	bob.unequip(0);
+	me->use(0, *bob);
+	me->use(1, *bob);
 
-	delete jim;
+	delete bob;
+	delete me;
+	delete src;
+
 	return 0;
 }

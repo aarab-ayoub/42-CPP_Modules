@@ -6,6 +6,7 @@ SRCS =	main.cpp \
 		Character.cpp \
 		Cure.cpp \
 		Ice.cpp \
+		MateriaSource.cpp
 
 	
 OBJS = $(SRCS:.cpp=.o)
@@ -17,7 +18,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJS)
 
-%.o: %.cpp AMateria.hpp ICharacter.hpp Character.hpp Ice.hpp Cure.hpp
+%.o: %.cpp AMateria.hpp ICharacter.hpp Character.hpp Ice.hpp Cure.hpp MateriaSource.hpp
 	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:
