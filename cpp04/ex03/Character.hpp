@@ -1,17 +1,24 @@
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
-#include <iostream>
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class Character
+class Character : public ICharacter
 {
-	protected:
-		std::string type;
+	private:
+		AMateria* inventory[4];
+		std::string name;
 	public:
-		Character();
+		Character(std::string const & name);
 		Character(Character const & other);
 		Character & operator=(Character const & other);
 		virtual ~Character();
+
+		virtual std::string const & getName() const;
+		virtual void equip(AMateria *m);
+		virtual void unequip(int idx);
+		virtual void use(int idx, ICharacter &target);
 };
 
 #endif
