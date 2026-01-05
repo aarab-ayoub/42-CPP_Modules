@@ -71,7 +71,7 @@ void Character::equip(AMateria *m)
 		return ;
 	for (int i = 0; i < 4; i++)
 	{
-		if (inventory[i])
+		if (inventory[i] == NULL)
 		{
 			inventory[i] = m;
 			return ;
