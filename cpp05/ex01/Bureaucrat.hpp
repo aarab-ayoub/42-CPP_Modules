@@ -1,5 +1,5 @@
-#ifndef FF3E0EC3_FD8D_4744_AA76_5A566B7B3CB4
-#define FF3E0EC3_FD8D_4744_AA76_5A566B7B3CB4
+#ifndef A82B4A40_96D5_4309_B4B7_19F09FA26F8C
+#define A82B4A40_96D5_4309_B4B7_19F09FA26F8C
 #ifndef BUREUCRAT_HPP
 #define BUREUCRAT_HPP
 
@@ -39,7 +39,8 @@ public:
     };
 };
 
+std::ostream& operator<<(std::ostream& os , const Bureaucrat& obj);
 #endif
 
 
-#endif /* FF3E0EC3_FD8D_4744_AA76_5A566B7B3CB4 */
+#endif /* A82B4A40_96D5_4309_B4B7_19F09FA26F8C */

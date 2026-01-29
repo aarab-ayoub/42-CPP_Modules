@@ -37,4 +37,5 @@ public:
     };
 };
 
+std::ostream& operator<<(std::ostream& os , const Bureaucrat& obj);
 #endif
