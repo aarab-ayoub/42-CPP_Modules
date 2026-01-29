@@ -7,6 +7,10 @@ Bureaucrat::Bureaucrat() : name("default") , grade(1)
 
 Bureaucrat::Bureaucrat(const std::string& name , int grade) : name(name)
 {
+    if(grade < 1)
+        throw GradeTooHighException();
+    if(grade > 150)
+        throw GradeTooLowException();
     this->grade = grade;
     std::cout << "Bureaucrat parametrized constructor called" << std::endl;
 }
@@ -39,7 +43,7 @@ Bureaucrat::~Bureaucrat()
     std::cout << "Bureaucrat destructor called" << std::endl;
 }
 
-int Bureaucrat::decrement()
+int Bureaucrat::increment()
 {
     if(grade - 1 < 1)
         throw GradeTooHighException();
@@ -47,7 +51,7 @@ int Bureaucrat::decrement()
     return grade;
 }
 
-int Bureaucrat::increment()
+int Bureaucrat::decrement()
 {
     if(grade + 1 > 150)
         throw GradeTooLowException();
