@@ -41,5 +41,3 @@ public:
 
 #endif
 
-
-#endif /* FA702F8B_D6FC_4280_B5D3_B961EB7A7ED6 */
