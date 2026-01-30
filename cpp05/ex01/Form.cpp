@@ -1,4 +1,5 @@
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 Form::Form() : name("Default"), Signed(false), SignGrade(150), ExecuteGrade(150)
 {
@@ -28,6 +29,19 @@ Form &Form::operator=(const Form &obj)
 	std::cout << "Copy assignment operator called" << std::endl;
 	return (*this);
 }
+
+std::ostream &operator<<(std::ostream &os, const Form &obj)
+{
+    os << "Form Name: " << obj.getName() << std::endl;
+    if (obj.getSigned())
+        os << "Status: Signed" << std::endl;
+    else
+        os << "Status: Not Signed" << std::endl;
+    os << "Sign Grade: " << obj.getSignGrade() << std::endl;
+    os << "Execute Grade: " << obj.getExecuteGrade() << std::endl;
+    return os;
+}
+
 Form::~Form()
 {
 	std::cout << "Destructor called" << std::endl;
@@ -53,3 +67,9 @@ int Form::getExecuteGrade() const
 	return (this->ExecuteGrade);
 }
 
+void Form::beSigned(const Bureaucrat &obj)
+{
+    if (obj.getGrade() >= this->SignGrade)
+        throw GradeTooLowException();
+    this->Signed = true;
+}

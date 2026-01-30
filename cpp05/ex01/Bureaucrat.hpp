@@ -4,6 +4,8 @@
 #define BUREUCRAT_HPP
 
 #include <iostream>
+class Form; 
+
 class Bureaucrat
 {
 private:
@@ -22,6 +24,7 @@ public:
     int increment();
     int decrement();
 
+    void signForm(Form& form);
     //nested exception classes
     class GradeTooHighException : public std::exception
     {

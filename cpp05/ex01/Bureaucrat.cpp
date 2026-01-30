@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-
+#include "Form.hpp"
 Bureaucrat::Bureaucrat() : name("default") , grade(1)
 {
     std::cout << "Bureaucrat constructor called" << std::endl;
@@ -62,4 +62,18 @@ int Bureaucrat::decrement()
         throw GradeTooLowException();
     grade++;
     return grade;
+}
+
+
+void Bureaucrat::signForm(Form &obj)
+{
+    try
+    {
+        obj.beSigned(*this);
+        std::cout << this->name << " signed " << obj.getName() << std::endl;
+    }
+    catch (const std::exception& e)
+    {
+        std::cout << this->name << " couldn't sign " << obj.getName() << " because " << e.what() << std::endl;
+    }
 }

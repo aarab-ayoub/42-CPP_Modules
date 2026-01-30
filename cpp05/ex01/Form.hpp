@@ -2,7 +2,7 @@
 #define FORM_HPP
 
 #include <iostream>
-#include "Bureaucrat.hpp"
+class Bureaucrat;
 class Form
 {
     private:
@@ -22,6 +22,7 @@ class Form
         int getSignGrade() const;
         int getExecuteGrade() const;
 
+        void beSigned(const Bureaucrat& obj);
         class GradeTooHighException : public std::exception
         {
             const char* what() const throw()
@@ -37,5 +38,6 @@ class Form
             }
         };
 };
+std::ostream& operator<<(std::ostream& os , const Form& obj);
 
 #endif
