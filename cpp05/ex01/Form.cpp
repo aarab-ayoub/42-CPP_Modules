@@ -69,7 +69,7 @@ int Form::getExecuteGrade() const
 
 void Form::beSigned(const Bureaucrat &obj)
 {
-    if (obj.getGrade() >= this->SignGrade)
+    if (obj.getGrade() > this->SignGrade)
         throw GradeTooLowException();
     this->Signed = true;
 }
