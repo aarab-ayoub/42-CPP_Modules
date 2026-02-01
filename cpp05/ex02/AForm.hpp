@@ -16,14 +16,15 @@ class AForm
         AForm(const AForm& obj);
         AForm(const std::string& name , int SignGrade ,int ExecuteGrade);
         AForm& operator=(const AForm &obj);
-        ~AForm();
+        virtual ~AForm();
 
         std::string getName() const;
         bool getSigned() const;
         int getSignGrade() const;
         int getExecuteGrade() const;
-
         void beSigned(const Bureaucrat& obj);
+
+        virtual void execute(const Bureaucrat& obj) const = 0 ;
         class GradeTooHighException : public std::exception
         {
             const char* what() const throw()
