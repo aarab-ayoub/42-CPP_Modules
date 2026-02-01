@@ -1,39 +1,24 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+
 int main()
 {
     std::cout << "----------------------------test1--------------------------------------" << std::endl;
     try
     {
-        Bureaucrat b("Alice", 50);
-        Form f("TopSecret", 30, 20);
+        Bureaucrat b1("b1", 136);
+        AForm* f1 = new ShrubberyCreationForm("home");
+        std::cout << b1 << std::endl;
+        std::cout << *f1 << std::endl;
+        b1.signForm(*f1);
+        f1->execute(b1);
 
-        std::cout << b << std::endl;
-        std::cout << f << std::endl;
+        delete f1;
 
-        b.signForm(f);
-        std::cout << f << std::endl;
     }
     catch(const std::exception& e)
     {
-        std::cout << e.what() << '\n';
+        std::cerr << e.what() << '\n';
     }
-
-
-    std::cout << "----------------------------test2--------------------------------------" << std::endl;
-    try
-    {
-        Bureaucrat b2("Bob", 20);
-        Form f2("Confidential", 30, 20);
-        std::cout << b2 << std::endl;
-        std::cout << f2 << std::endl;
-        
-        b2.signForm(f2);
-        std::cout << f2 << std::endl;
-    }
-    catch(const std::exception& e)
-    {
-        std::cout << e.what() << '\n';
-    }
-    return 0;
 }

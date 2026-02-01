@@ -39,6 +39,13 @@ class AForm
                 return "Grade is too low!";
             }
         };
+        class NotSignedException : public std::exception
+        {
+            const char* what() const throw()
+            {
+                return "U must be signed to the form ";
+            }
+        };
 };
 std::ostream& operator<<(std::ostream& os , const AForm& obj);
 

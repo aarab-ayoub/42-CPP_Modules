@@ -3,7 +3,7 @@
 
 # include "AForm.hpp"
 
-class ShrubberyCreationForm : AForm
+class ShrubberyCreationForm : public AForm
 {
   private:
 	std::string target;
@@ -14,6 +14,7 @@ class ShrubberyCreationForm : AForm
 	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
 	~ShrubberyCreationForm();
 	void execute(const Bureaucrat& obj) const;
+
 };
 
 #endif
