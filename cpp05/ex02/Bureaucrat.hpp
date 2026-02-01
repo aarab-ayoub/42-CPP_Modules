@@ -27,6 +27,7 @@ public:
     int decrement();
 
     void signForm(AForm& form);
+    void executeForm(AForm const & form) const ;
     //nested exception classes
     class GradeTooHighException : public std::exception
     {
